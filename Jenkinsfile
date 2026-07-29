@@ -14,7 +14,7 @@ pipeline {
 
     stage('Install Dependencies') {
       steps {
-        withEnv(["PATH+NODE=${tool 'NodeJS'}"]) {
+        nodejs('node-22') {
           sh 'npm install'
         }
       }
@@ -22,22 +22,27 @@ pipeline {
 
     stage('OWASP Dependency Check') {
       steps {
-        sh 'npm audit --omit=dev'
+        nodejs('node-22') {
+          sh 'npm audit --omit=dev'
+        }
       }
     }
 
     stage('SonarQube Analysis') {
       steps {
         withSonarQubeEnv('SonarQube') {
-          sh 'npx sonar-scanner'
+          nodejs('node-22') {
+            sh 'npx sonar-scanner'
+          }
         }
       }
     }
 
     stage('Build') {
       steps {
-        sh 'npm run build'
+        nodejs('node-22') {
+          sh 'npm run build'
+        }
       }
     }
-  }
 }
