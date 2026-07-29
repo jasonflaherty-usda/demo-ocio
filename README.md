@@ -1,15 +1,15 @@
-# Land Parcel Scorecard
+# Forest Canopy Explorer
 
-A simple React/Vite demo app that evaluates mock land parcels using basic suitability rules.
+A React/Vite app that visualizes mock tree stands on a Leaflet map. Users can tap each polygon to view details about tree type, canopy density, health, and management recommendations.
 
 ## What it demonstrates
 
-- Basic React components
-- Data-driven rendering
-- A simple land parcel scoring function
-- Vite production build
-- GitHub Actions workflow
-- GitHub Pages deployment
+- React and Vite application structure
+- Leaflet map integration with GeoJSON-style polygons
+- Interactive modal popups for stand details
+- A canopy-density legend for visual interpretation
+- GitHub Actions workflow for security checks and GitHub Pages deployment
+- Jenkins pipeline support for checkout, OWASP dependency scanning, and SonarQube analysis
 
 ## Local development
 
@@ -48,7 +48,16 @@ This project includes a GitHub Actions workflow at:
 On every push to `main`, GitHub Actions will:
 
 1. Check out the repository
-2. Set up Node.js
-3. Install dependencies
+2. Run an OWASP dependency scan
+3. Run a security audit check
 4. Build the Vite app
 5. Deploy the `dist/` folder to GitHub Pages
+
+## Jenkins pipeline
+
+A Jenkinsfile is included at the repository root with stages for:
+
+- Checkout
+- OWASP dependency check
+- SonarQube analysis
+- Build
