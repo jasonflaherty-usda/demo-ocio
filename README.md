@@ -1,6 +1,6 @@
 # Forest Canopy Explorer
 
-A React/Vite app that visualizes mock tree stands on a Leaflet map. Users can tap each polygon to view details about tree type, canopy density, health, and management recommendations.
+A React/Vite app that visualizes mock tree stands on a Leaflet map. Users can tap each polygon to view details about tree type, canopy density, health, and management recommendations. This is a fake test demo project using fictional stand data for illustration and learning purposes.
 
 ## What it demonstrates
 

@@ -110,7 +110,7 @@ function App() {
   );
 }
 
-function getFillColor(canopyDensity) {
+export function getFillColor(canopyDensity) {
   if (canopyDensity >= 0.8) return "#1f5f3c";
   if (canopyDensity >= 0.7) return "#3d7b4f";
   if (canopyDensity >= 0.6) return "#6a9f6a";
